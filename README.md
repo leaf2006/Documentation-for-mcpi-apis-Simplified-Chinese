@@ -54,7 +54,7 @@
 
 <br />
 
-.create（地址 = “localhost”， port = 4711）
+### .create(address = "localhost", port = 4711)
 
 “创建与Minecraft 的连接（地址、端口）=> Minecraft 对象”
 
@@ -66,5 +66,16 @@
 mc = minecraft.Minecraft.create()
 #指定IP地址和端口
 mc = minecraft.Minecraft.create("192.168.1.1", 4711)
+```
 
+### .getBlock(x,y,z)
+
+"Get block (x,y,z) => id:int"
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```bash
+#检索0,0,0处块的块类型
+blockType = mc.getBlock（0，0，0）
 ```
