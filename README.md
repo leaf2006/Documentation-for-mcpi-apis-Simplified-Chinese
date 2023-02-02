@@ -58,6 +58,9 @@
 
 “创建与Minecraft 的连接（地址、端口）=> Minecraft 对象”
 
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
 ```bash
 #使用默认地址和端口
 mc = minecraft.Minecraft.create()
