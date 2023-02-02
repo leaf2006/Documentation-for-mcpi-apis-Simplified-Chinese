@@ -61,7 +61,7 @@
 <img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
 <img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
 
-```bash
+```python
 #使用默认地址和端口
 mc = minecraft.Minecraft.create()
 #指定IP地址和端口
@@ -75,7 +75,138 @@ mc = minecraft.Minecraft.create("192.168.1.1", 4711)
 <img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
 <img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
 
-```bash
+```python
 #检索0,0,0处块的块类型
 blockType = mc.getBlock（0，0，0）
+```
+
+### .getBlocks(x0,y0,z0,x1,y1,z1)
+
+“获取长方体块（x0，y0，z0，x1，y1，z1） => [id：int]”
+
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#get the block id's in a cuboid
+blocks = mc.getBlocks(-1,-1,-1,1,1,1)
+for block in blocks:
+    print block
+```
+
+### .getBlockWithData(x,y,z)
+
+“获取数据块（x，y，z）=>块”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#在方块0,0,0处检索块对象
+blockObj = mc.getBlockWithData(0,0,0)
+```
+
+### .setBlock(x,y,z)
+
+“设置方块(x,y,z,id,[data])”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#将x、y、z坐标处的方块设置为特定类型
+mc.setBlock(0,0,0,block.DIRT.id)
+#将块设置为特定类型和'子类型'
+mc.setblock(0,0,0,block.WOOD.id, 1)
+```
+
+### .setBlocks(x0,y0,z0,x1,y1,z1,blockType, blockData)
+
+“设置长方体块(x0,y0,z0,x1,y1,z1,id,[data])”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#一次设置多个方块，填补两组x、y、z坐标之间的空白
+mc.setBlocks(-1, -1, -1, 1, 1, 1, block.STONE.id)
+```
+
+### .getHeight(x,z)
+
+“获取世界的高度(x,z) => int”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#找到代表“最高”(非空气)块的x, z坐标的y(垂直)
+y = mc.getHeight(0,0)
+```
+
+### .getPlayerEntityIds()
+
+“获取已连接玩家的实体id=> [id:int]”
+
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+#获取玩家名为“martinohanlon”的实体id
+entityId = mc.getPlayerEntityId("martinohanlon")
+print entityId
+```
+
+### .saveCheckpoint()
+
+“保存可用于恢复世界的检查点”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+
+```python
+mc.saveCheckpoint()
+```
+
+### .restoreCheckpoint()
+
+“将世界状态恢复到检查点”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+
+```python
+mc.restoreCheckpoint()
+```
+
+### .postToChat(message)
+
+“在游戏聊天窗口中发布信息”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
+```python
+输入“你好我的世界世界”到聊天窗口
+mc.postToChat("Hello Minecraft World")
+```
+
+### .setting(setting, status)
+
+“设置世界设置（设置、状态）。钥匙: 世界不可更改（world_immutable）, 名称标签可见（nametags_visible）”
+
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+
+```python
+#开启世界不可更改
+mc.setting("world_immutable", True)
+#关闭名称标签可见
+mc.setting("nametags_visible", False)
+```
+
+## Minecraft.player
+
+### .getPos()
+
+“获取玩家在世界中的坐标(由浮点数(小数)组成的Vec3)，如果玩家在块x5中，则返回”
+
+```python
+#获取玩家坐标作为浮点数
+playerPos = mc.player.getPos()
 ```
