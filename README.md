@@ -206,6 +206,9 @@ mc.setting("nametags_visible", False)
 
 “获取玩家在世界中的坐标(由浮点数(小数)组成的Vec3)，如果玩家在块x5中，则返回”
 
+<img src="https://3.bp.blogspot.com/-jfHVu6wzJ8A/VLZrZRxHviI/AAAAAAAAKnc/QkMuqztRYP8/s1600/Raspi_logo_small.png"/>
+<img src="https://3.bp.blogspot.com/-kTbsdFgeL4E/VLZrwiMGWZI/AAAAAAAAKnk/AYCZdsaR-Vg/s1600/bukkit_logo_small.png"/>
+
 ```python
 #获取玩家坐标作为浮点数
 playerPos = mc.player.getPos()
